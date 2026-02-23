@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: k3d-registry.localhost:5111/plateforme_electronique_k8s-frontend:latest
+        image: plateforme_electronique_k8s-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
