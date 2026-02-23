@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: yassmineg/redis:7-alpine
+        image: k3d-registry.localhost:5111/redis:7-alpine
         command: ["redis-server", "--appendonly", "yes"]
         ports:
         - containerPort: 6379

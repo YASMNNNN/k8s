@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: postgresql
-        image: yassmineg/postgres:15-alpine
+        image: k3d-registry.localhost:5111/postgres:15-alpine
         ports:
         - containerPort: 5432
           name: postgres

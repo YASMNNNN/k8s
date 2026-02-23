@@ -41,28 +41,28 @@ commonLabels:
 # Images to use from Docker Hub
 images:
   # Infrastructure
-  - name: yassmineg/postgres
+  - name: k3d-registry.localhost:5111/postgres
     newTag: 15-alpine
-  - name: yassmineg/redis
+  - name: k3d-registry.localhost:5111/redis
     newTag: 7-alpine
-  - name: yassmineg/keycloak
+  - name: k3d-registry.localhost:5111/keycloak
     newTag: "22.0"
   # Microservices
-  - name: yassmineg/eureka-server
+  - name: k3d-registry.localhost:5111/eureka-server
     newTag: latest
-  - name: yassmineg/api-gateway
+  - name: k3d-registry.localhost:5111/api-gateway
     newTag: latest
-  - name: yassmineg/invoice-service
+  - name: k3d-registry.localhost:5111/invoice-service
     newTag: latest
-  - name: yassmineg/payment-service
+  - name: k3d-registry.localhost:5111/payment-service
     newTag: latest
-  - name: yassmineg/subscription-service
+  - name: k3d-registry.localhost:5111/subscription-service
     newTag: latest
-  - name: yassmineg/notification-service
+  - name: k3d-registry.localhost:5111/notification-service
     newTag: latest
-  - name: yassmineg/user-auth-service
+  - name: k3d-registry.localhost:5111/user-auth-service
     newTag: latest
-  - name: yassmineg/signature-service
+  - name: k3d-registry.localhost:5111/signature-service
     newTag: latest
-  - name: yassmineg/frontend
+  - name: k3d-registry.localhost:5111/frontend
     newTag: latest

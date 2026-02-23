@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: payment-service
-        image: yassmineg/payment-service:latest
+        image: k3d-registry.localhost:5111/payment-service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: eureka-server
-        image: yassmineg/eureka-server:latest
+        image: k3d-registry.localhost:5111/eureka-server:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8761
