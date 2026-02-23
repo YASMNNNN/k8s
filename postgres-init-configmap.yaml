@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-init-scripts
+  namespace: plateforme-electronique
+data:
+  01-create-databases.sh: |
+    #!/bin/bash
+    set -e
+
+    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+      SELECT 'CREATE DATABASE invoice_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'invoice_db') \gexec
+      SELECT 'CREATE DATABASE payment_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'payment_db') \gexec
+      SELECT 'CREATE DATABASE subscription_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'subscription_db') \gexec
+      SELECT 'CREATE DATABASE notification_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'notification_db') \gexec
+      SELECT 'CREATE DATABASE user_auth_db' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'user_auth_db') \gexec
+    EOSQL

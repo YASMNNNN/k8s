@@ -1,0 +1,68 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: plateforme-electronique
+
+resources:
+  # Namespace
+  - namespace.yaml
+
+  # Secrets and ConfigMaps
+  - secrets.yaml
+  - postgres-init-configmap.yaml
+
+  # Storage
+  - postgres-storage.yaml
+  - redis-storage.yaml
+
+  # Infrastructure Services
+  - postgresql.yaml
+  - redis.yaml
+  - keycloak.yaml
+
+  # Microservices
+  - eureka-server.yaml
+  - api-gateway.yaml
+  - invoice-service.yaml
+  - payment-service.yaml
+  - subscription-service.yaml
+  - notification-service.yaml
+  - user-auth-service.yaml
+  - signature-service.yaml
+
+  # Frontend
+  - frontend.yaml
+
+# Common labels for all resources
+commonLabels:
+  app.kubernetes.io/part-of: plateforme-electronique
+  app.kubernetes.io/managed-by: argocd
+
+# Images to use from Docker Hub
+images:
+  # Infrastructure
+  - name: yassmineg/postgres
+    newTag: 15-alpine
+  - name: yassmineg/redis
+    newTag: 7-alpine
+  - name: yassmineg/keycloak
+    newTag: "22.0"
+  # Microservices
+  - name: yassmineg/eureka-server
+    newTag: latest
+  - name: yassmineg/api-gateway
+    newTag: latest
+  - name: yassmineg/invoice-service
+    newTag: latest
+  - name: yassmineg/payment-service
+    newTag: latest
+  - name: yassmineg/subscription-service
+    newTag: latest
+  - name: yassmineg/notification-service
+    newTag: latest
+  - name: yassmineg/user-auth-service
+    newTag: latest
+  - name: yassmineg/signature-service
+    newTag: latest
+  - name: yassmineg/frontend
+    newTag: latest
