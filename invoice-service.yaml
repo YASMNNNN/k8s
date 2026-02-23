@@ -43,17 +43,23 @@ spec:
           value: "update"
         - name: SPRING_JPA_DATABASE_PLATFORM
           value: "org.hibernate.dialect.PostgreSQLDialect"
+        startupProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8082
+          failureThreshold: 30
+          periodSeconds: 10
         livenessProbe:
           httpGet:
             path: /actuator/health
             port: 8082
-          initialDelaySeconds: 90
+          initialDelaySeconds: 10
           periodSeconds: 30
         readinessProbe:
           httpGet:
             path: /actuator/health
             port: 8082
-          initialDelaySeconds: 60
+          initialDelaySeconds: 10
           periodSeconds: 10
 ---
 apiVersion: v1
