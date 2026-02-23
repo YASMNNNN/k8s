@@ -18,7 +18,7 @@ spec:
       containers:
       - name: notification-service
         image: k3d-registry.localhost:5111/plateforme_electronique_k8s-notification-service:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8085
           name: http

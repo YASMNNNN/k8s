@@ -41,28 +41,28 @@ commonLabels:
 # Images to use from Docker Hub
 images:
   # Infrastructure
-  - name: k3d-registry.localhost:5111/postgres
+  - name: postgres
     newTag: 15-alpine
-  - name: k3d-registry.localhost:5111/redis
+  - name: redis
     newTag: 7-alpine
-  - name: k3d-registry.localhost:5111/keycloak
+  - name: keycloak
     newTag: "22.0"
   # Microservices
-  - name: k3d-registry.localhost:5111/eureka-server
+  - name: eureka-server
     newTag: latest
-  - name: k3d-registry.localhost:5111/api-gateway
+  - name: api-gateway
     newTag: latest
-  - name: k3d-registry.localhost:5111/invoice-service
+  - name: invoice-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/payment-service
+  - name: payment-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/subscription-service
+  - name: subscription-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/notification-service
+  - name: notification-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/user-auth-service
+  - name: user-auth-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/signature-service
+  - name: signature-service
     newTag: latest
-  - name: k3d-registry.localhost:5111/frontend
+  - name: frontend
     newTag: latest

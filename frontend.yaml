@@ -28,8 +28,12 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: plateforme_electronique_k8s-frontend:latest
+        image: k3d-registry.localhost:5111/plateforme_electronique_k8s-frontend:latest
+<<<<<<< HEAD
         imagePullPolicy: Always
+=======
+        imagePullPolicy: IfNotPresent
+>>>>>>> e8594f1 (fix: remove k3d registry prefix from images)
         ports:
         - containerPort: 80
           name: http

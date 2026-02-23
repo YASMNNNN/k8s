@@ -18,7 +18,7 @@ spec:
       containers:
       - name: api-gateway
         image: k3d-registry.localhost:5111/plateforme_electronique_k8s-api-gateway:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
           name: http
