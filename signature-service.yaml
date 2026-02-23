@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: signature-service
-        image: k3d-registry.localhost:5111/signature-service:latest
+        image: k3d-registry.localhost:5111/plateforme_electronique_k8s-signature-service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8086

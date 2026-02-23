@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: user-auth-service
-        image: k3d-registry.localhost:5111/user-auth-service:latest
+        image: k3d-registry.localhost:5111/plateforme_electronique_k8s-user-auth-service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
